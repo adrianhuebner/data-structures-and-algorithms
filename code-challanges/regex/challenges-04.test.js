@@ -47,6 +47,7 @@ const citiesAtoJ = (arr) => {
   for(let i = 0; i < arr.length; i++){
     if(arr[i].match(regEx)){
       ans.push(arr[i]);
+      // thought return true would work but it doesn't and I don't understand why it doesn't
     }
   }
   return ans;
