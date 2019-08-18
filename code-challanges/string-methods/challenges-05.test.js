@@ -14,13 +14,15 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-  for(let i = 0; i < str.length; i++){
-    if(str.charAt[i] === ' ')
-      result.push(str.split(i));
-    console.log(result);
+  let pencilList = [];
+  pencilList.push(str);
+  const howlong = str;
+  for(let i =0; i < howlong.length;  i++){
+    str = str.slice(1);
+    pencilList.push(str);
   }
-  return result;
+  console.log(pencilList);
+  return pencilList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,13 +34,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  let newArr = [];
-  newArr = arr.split(0);
-  console.log(newArr);
-  // for(let i = 0; i < arr.length; i++){
-  //   console.log(arr.charAt(i));
-  // }
-  // return newArr;
+  return arr.split('');
 };
 
 
@@ -85,7 +81,9 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(item => {
+    result.push(item.slice(item.indexOf(' ', 3) + 1));
+  });
   return result;
 };
 
@@ -99,7 +97,14 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(item => {
+    //split on space and assign to new array
+    let newArr = item.split(' ');
+    //go through new array slice on second index to grab ingredients names
+    let finalRes = newArr.slice(2);
+    //join with space in between
+    result.push(finalRes.join(' '));
+  });
   return result;
 };
 
@@ -115,7 +120,10 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(sentence => {
+    let actnWrds = sentence.split(' ');
+    result.push(actnWrds[0]);
+  });
   return result;
 };
 
@@ -133,7 +141,13 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +166,13 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if(str.legnth < numberOfCharacters){
+    return '';
+  } else if(numberOfCharacters < 0){
+    return str;
+  } else{
+    return str.slice(0, (str.length - numberOfCharacters));
+  }
 };
 
 
@@ -206,7 +226,7 @@ Run your tests from the console: jest challenges-05.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return a list of shortening words', () => {
     expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
     expect(howMuchPencil('Welcome').length).toStrictEqual(8);
@@ -215,7 +235,7 @@ xdescribe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array of individual letters', () => {
     expect(wordsToCharList('Gregor')).toStrictEqual(['G', 'r', 'e', 'g', 'o', 'r']);
     expect(wordsToCharList('Gregor').length).toStrictEqual(6);
@@ -224,27 +244,27 @@ xdescribe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return a list of foods', () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
@@ -257,7 +277,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should shorten the string based on the first argument', () => {
     expect(removeLastCharacters('Gregor', 2)).toStrictEqual('Greg');
     expect(removeLastCharacters('Gregor', 2).length).toStrictEqual(4);
