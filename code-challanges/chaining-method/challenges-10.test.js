@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -11,7 +13,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  return input.reduce((accumlator, current) => {
+    let inrArr = current.reduce((acc, cur) => {
+      if(cur === target){
+        return acc + 1;
+      }
+      return acc;
+    }, 0);
+    return accumlator + inrArr;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,7 +35,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let total = 0;
+  input.forEach(numb => {
+    numb.forEach(element => {
+      total = element + total;
+    });
+  });
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,7 +57,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let newArr = input.map(list => {
+    return list.filter(element => {
+      return element % 5 === 0 && typeof element === 'number';
+    });
+  });
+  let answer = newArr.map(list => {
+    return list.map(element => {
+      return Math.pow(2, element);
+    });
+  });
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,7 +133,16 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  let strWarGndr = [];
+  let starWarArr = data.filter(person => {
+    if(person.gender === 'male' || person.gender === 'female'){
+      return person.name;
+    }
+  });
+  starWarArr.forEach(obj => {
+    strWarGndr.push(obj.name);
+  });
+  return strWarGndr.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,7 +152,17 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  let name = '';
+  data.reduce((accumlator, current) => {
+    if(name === ''){
+      name = current.name;
+    }
+    else if(accumlator.length >= current.name.length){
+      name = current.name;
+    }
+    return name;
+  });
+  return name;
 };
 
 /* ------------------------------------------------------------------------------------------------
