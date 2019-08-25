@@ -9,7 +9,12 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  
+  let counter = 0;
+  arr.reduce((accumaltor, current) => {
+    accumaltor + current;
+    counter++;
+  },0)
+  return counter;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,7 +147,12 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumaltor, current) => {
+    if(current.children){
+      return current.children.length + accumaltor;
+    }
+    return accumaltor;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,7 +164,10 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let total = arr.reduce((accumaltor, current) => {
+    return accumaltor + current;
+  }, 0);
+  return total / (arr.length);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,7 +188,12 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumaltor, current) => {
+    if(isPrime(current)){
+      return accumaltor + 1;
+    }
+    return accumaltor;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -245,7 +263,7 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-09.test.js
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return the length of the array', () => {
     expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
   });
@@ -264,19 +282,19 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
