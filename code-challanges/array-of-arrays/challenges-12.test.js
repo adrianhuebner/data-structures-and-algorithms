@@ -48,7 +48,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
-  
+  let cookieTotals = [];
+  hours.forEach((hour, i) => {
+    cookieTotals.push({time: hour, sales: `${data[i]} cookies`});
+  });
+  return cookieTotals;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +75,13 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let totalTreats = 0;
+  arr.forEach(product => {
+    product.items.forEach(pet => {
+      if(pet.name === 'Treats') totalTreats += pet.quantity;
+    });
+  });
+  return totalTreats;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,6 +104,12 @@ The top row of the board is considered row zero and row numbers increase as they
 
 const battleship = (board, row, col) => {
   //  Solution code here...
+  // Found some paper from Carnegie Mellon University that helped figure this problem out
+  if(board[row][col] === '#'){
+    return 'hit';
+  } else {
+    return 'miss';
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,6 +122,7 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -182,7 +200,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should create an object of data for each store', () => {
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
       { sales: '88 cookies', time: '9 a.m.' },
@@ -204,13 +222,13 @@ xdescribe('Testing challenge 2', () => {
 });
 
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   const battleshipData = [
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],
