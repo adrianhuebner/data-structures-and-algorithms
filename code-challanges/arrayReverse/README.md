@@ -17,4 +17,4 @@ Write a function that takes an array as an argument, without using any built in 
   - Call the function with array of strings as argument
 
 ## Solution
-![whiteboardimage](/arrayReverse/assests/whiteboard.jpeg)
+![whiteboardimage](/arrayReverse/assests/arrayReverse.jpeg)
