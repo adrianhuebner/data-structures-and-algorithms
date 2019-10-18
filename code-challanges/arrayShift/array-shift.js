@@ -4,32 +4,22 @@
 // create a for loop that will iterate through that array until it reaches the midpoint
 // insert new value into array at the midpoint
 
-const insertShiftArray (arr, val){
+// other code I also worked on
+let arr = [2,4,6,8]
+let newVal = 5
+
+function insertShiftArray(arr, newVal){
   let midSpot = (arr.length - 1)/2;
-  // maybe need new array so: let newArr = [];
+  let newArr = [];
   for(let i = 0; i >= (arr.length - 1)/2; i++){
-    if(arr[i] === midSpot);
-    // insert new Value into array
-  } else {
-    // keep going through array until midSpot is reached
+    if (i < midSpot){
+      newArr[i] = arr[i]
+    } else if(i === midSpot){
+      newArr[i] = newVal
+    } else{
+      newArr[i] = arr[i -1]
+    }
   }
   return arr;
 }
-insertShiftArray(arr, val);
-
-
-// other code I also worked on
-// let arr = [2,4,6,8]
-// let newVal = 5
-
-// const insertShiftArray(arr) => {
-//   let midSpot = (arr.length - 1)/2;
-//   let newArr = [];
-//   for(let i = 0; i >= (arr.length - 1)/2; i++){
-//     if (arr[i] === midSpot){
-//       newArr[i] === newVal;
-//     } 
-//   }
-//   return arr;
-// }
-// insertShiftArray(arr, newVal);
+insertShiftArray(arr, newVal);
