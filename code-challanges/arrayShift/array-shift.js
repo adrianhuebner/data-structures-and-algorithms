@@ -16,3 +16,20 @@ const insertShiftArray (arr, val){
   return arr;
 }
 insertShiftArray(arr, val);
+
+
+// other code I also worked on
+// let arr = [2,4,6,8]
+// let newVal = 5
+
+// const insertShiftArray(arr) => {
+//   let midSpot = (arr.length - 1)/2;
+//   let newArr = [];
+//   for(let i = 0; i >= (arr.length - 1)/2; i++){
+//     if (arr[i] === midSpot){
+//       newArr[i] === newVal;
+//     } 
+//   }
+//   return arr;
+// }
+// insertShiftArray(arr, newVal);
