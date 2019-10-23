@@ -1,6 +1,7 @@
 # LinkedList Insertions
 
 ## Challenge
+
 .append(value) which adds a new node with the given value to the end of the list
 .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
@@ -13,4 +14,5 @@
 - Insert After goes through the linked list, if current is not null then look for value, if the value is found append new Value after that value, if value isn't there return error
 
 ## Solution
+
 ![whiteboardimage](./assets/ll-insertions.jpeg)
