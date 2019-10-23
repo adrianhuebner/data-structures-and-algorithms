@@ -56,12 +56,12 @@ class LinkedList {
   }
 
   //insertAfter method
-//  insertAfter(value,newVAl){
+  //  insertAfter(value,newVAl){
 
- // }
+  // }
 }
 
 const ll = new LinkedList();
 ll.append(1);
 ll.insertBefore(1,0);
-ll.insertBefore(1.5,1);
+ll.insertBefore(1, 1.5);
