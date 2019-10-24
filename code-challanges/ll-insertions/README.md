@@ -2,11 +2,15 @@
 
 ## Challenge
 
+### Challenge for Class 6 Code Challenge
+
 .append(value) which adds a new node with the given value to the end of the list
 .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
 ## Approach & Efficiency
+
+### Approach for Class 6 Code Challenge
 
 - Made classes for Node and Linked List
 - Append is going to look to see if there is a head, if there isn't then use that value as the head
@@ -15,4 +19,10 @@
 
 ## Solution
 
-![whiteboardimage](./assets/ll-insertions.jpeg)
+### White Board for Class 6 Code Challenge
+
+![whiteboardimageclass6](./assets/ll-insertions.jpeg)
+
+### White Board for Class 7 Code Challenge
+
+![whiteboardimageclass7]()

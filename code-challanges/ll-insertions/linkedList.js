@@ -37,7 +37,7 @@ class LinkedList {
     if(current.value === value){
       node.next = current;
       this.head = node;
-      this.length++;
+      this.size++;
       return;
     }
 
@@ -47,7 +47,7 @@ class LinkedList {
       if(current.value === value){
         previous.next = node;
         node.next = current;
-        this.length++;
+        this.size++;
         break;
       }
       previous = previous.next;
@@ -59,6 +59,28 @@ class LinkedList {
   //  insertAfter(value,newVAl){
 
   // }
+
+  kthFromEnd(k){
+    let current = this.head;
+    let counter = 0;
+
+    while(current !== null){
+      counter++;
+      current = current.next;
+    }
+    let howLong = counter - k;
+    if (howLong < 0 && howLong > counter){
+      return 'Exeption';
+    }
+    current = this.head;
+    let length = 0;
+
+    while(current !== null && length !== howLong){
+      length++;
+      current = current.next;
+    }
+    return current.value;
+  }
 }
 
 const ll = new LinkedList();
