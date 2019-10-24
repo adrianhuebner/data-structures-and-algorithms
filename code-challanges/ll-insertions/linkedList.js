@@ -68,15 +68,12 @@ class LinkedList {
       counter++;
       current = current.next;
     }
-    let howLong = counter - k;
-    if (howLong < 0 && howLong > counter){
+    if (k >= counter){
       return 'Exeption';
     }
     current = this.head;
-    let length = 0;
-
-    while(current !== null && length !== howLong){
-      length++;
+    
+    for(let i = 1; i < counter - k; i++){
       current = current.next;
     }
     return current.value;
@@ -84,6 +81,8 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
-ll.append(1);
-ll.insertBefore(1,0);
-ll.insertBefore(1, 1.5);
+ll.head = new Node(1);
+ll.head.next = new Node(3);
+ll.head.next.next = new Node(7);
+
+ll.kthFromEnd(1);
