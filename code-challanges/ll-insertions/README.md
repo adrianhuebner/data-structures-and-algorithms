@@ -12,6 +12,10 @@
 
 Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
+### Challenge for Class 8 Code Challenge
+
+Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
 ## Approach & Efficiency
 
 ### Approach for Class 6 Code Challenge
@@ -26,6 +30,14 @@ Write a method for the Linked List class which takes a number, k, as a parameter
 - Worked with Julie, Biniam and Enrique
 - kthFromEnd is goig to set current to head and have a counter, if it can't find k then it is going to return an exemption, but if it is return the current value
 
+### Approach for Class 8 Code Challenge
+
+- create new empty linked list
+- create a while loop that checks to see if list1 and list2 are null
+- if statement that checks for list one
+- else statement that checks for list two
+- returns new linked list
+
 ## Solution
 
 ### White Board for Class 6 Code Challenge
@@ -35,3 +47,7 @@ Write a method for the Linked List class which takes a number, k, as a parameter
 ### White Board for Class 7 Code Challenge
 
 ![whiteboardimageclass7](./assets/codechallenge7.jpeg)
+
+### White Board for Class 8 Code Challenge
+
+![whiteboardimageclass8](./assets/ll-merge.jpeg)
