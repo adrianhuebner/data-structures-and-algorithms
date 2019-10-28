@@ -2,6 +2,12 @@
 
 ## Challenge
 
+### Challenge for Class 5 Code Challenge
+
+Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
+Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List.
+
 ### Challenge for Class 6 Code Challenge
 
 .append(value) which adds a new node with the given value to the end of the list
@@ -17,6 +23,27 @@ Write a method for the Linked List class which takes a number, k, as a parameter
 Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Approach & Efficiency
+
+### Approach for Class 5 Code Challenge
+
+- Insert at head
+  - create a new node
+  - set node.next to be head
+  - reassign head to current
+  - return the head node
+- Includes boolean
+  - set current to be the head node
+  - create a while loop to traverse the list when it isn't empty
+    - if statement to see if the current value equals the value that you are looking for you
+      - if it does then return true
+    - else statement that sets current to current.next
+      - return false
+- String a Node List
+  - set a variable to an empty string
+    - if the the list is empty return an exception 
+  - set a variable to equal the head node
+    - while loop that turns list into a string
+  - return the string
 
 ### Approach for Class 6 Code Challenge
 
@@ -39,6 +66,10 @@ Write a function called mergeLists which takes two linked lists as arguments. Zi
 - returns new linked list
 
 ## Solution
+
+### White Board for Class 5 Code Challenge
+
+![whiteboardimageclass5]()
 
 ### White Board for Class 6 Code Challenge
 

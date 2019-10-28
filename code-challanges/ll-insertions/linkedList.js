@@ -10,6 +10,41 @@ class LinkedList {
     this.head = null;
     this.size = 0;
   }
+
+  // insert method
+  insert(value){
+    let node = new Node(value);
+    node.next = this.head;
+    this.head = node;
+    return this.head;
+  }
+
+  // string method
+  toString(){
+    let string = '';
+    if(this.head !== null){
+      return 'Exception';
+    }
+    let current = this.head;
+    while(current){
+      string = `${string} ${current.value}`;
+    }
+    return string;
+  }
+
+  //includes method
+  includes(value){
+    let current = this.head;
+    while(current !== null){
+      if(current.value === value){
+        return true;
+      } else {
+        current = current.next
+      }
+      return false;
+    }
+  }
+
   //append method
   append(value){
     let node = new Node(value);
@@ -17,7 +52,7 @@ class LinkedList {
     if(!this.head){
       this.head = node;
       this.size++;
-      return;
+      return this.head;
     }
     current = this.head;
     while(current.next){
@@ -60,6 +95,7 @@ class LinkedList {
 
   // }
 
+  // kthFromEnd method
   kthFromEnd(k){
     let current = this.head;
     let counter = 0;
@@ -78,6 +114,8 @@ class LinkedList {
     }
     return current.value;
   }
+
+  // merged list method
   mergedList(l1,l2){
     let newList = new LinkedList();
     let current = newList;
