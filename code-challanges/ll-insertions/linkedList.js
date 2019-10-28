@@ -22,7 +22,7 @@ class LinkedList {
   // string method
   toString(){
     let string = '';
-    if(this.head !== null){
+    if(this.head === null){
       return 'Exception';
     }
     let current = this.head;

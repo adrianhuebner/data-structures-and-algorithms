@@ -69,7 +69,9 @@ Write a function called mergeLists which takes two linked lists as arguments. Zi
 
 ### White Board for Class 5 Code Challenge
 
-![whiteboardimageclass5]()
+![whiteboardimageclass5forinsertandstring](./assets/insert_and_string.jpeg)
+
+![whiteboardimageclass5forincludes](./assets/includes.jpeg)
 
 ### White Board for Class 6 Code Challenge
 
