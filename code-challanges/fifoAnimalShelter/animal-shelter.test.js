@@ -11,3 +11,12 @@ describe('Can add animals to the shelter', () => {
     expect(animal.dog.stackOne.storage).toEqual([{type: 'dog', name: 'Olive', age: 'Puppy'}]);
   })
 });
+
+describe('Can adopt a pet from the shelter', () => {
+  it('You can get your new pet', () => {
+    animal.enqueue({type: 'cat', name: 'Boots', age: 'Kitten'});
+    animal.enqueue({type: 'dog', name: 'Tanya', age: 'Adult'});
+    animal.dequeue('dog');
+    expect(animal.dog.stackTwo.storage).toEqual([{type: 'dog', name: 'Tanya', age: 'Adult'}])
+  })
+});
