@@ -4,10 +4,17 @@
 
 - Sorting algorithm that builds a sorted array, one value at a time to find it's correct position
 
-
 ## Diagram
 
+![Diagram from Geeks for Geeks](https://media.geeksforgeeks.org/wp-content/uploads/insertionsort.png)
+
+Image taken from Geeks for Geeks
+
 ## Algorithm
+
+- Move left through the array
+- Check the current positions value
+- Move that value in the right order
 
 ## Pseudocode
 
