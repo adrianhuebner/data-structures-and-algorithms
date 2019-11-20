@@ -1,6 +1,13 @@
 # Blog Subject: Merge Sort
 
+The function will take in an array that contains integers, and return that array sorted using recrusion.
+
 ## Learning Objectives
+
+- Understand the problem domain that is given to you
+- Step through the logic to have a better understanding
+- Convert the Pseudo Code into actual code
+- Step through the code to have a better understanding
 
 ## Diagram
 
@@ -8,6 +15,11 @@
 Geeks for Geeks Diagram
 
 ## Algorithm
+
+- Find the middle point of the array and divide it in half
+- Mergesort the first half of the array
+- Mergesort the second half of the array
+- Remerge the two halves together sorted
 
 ## Pseudo Code
 
