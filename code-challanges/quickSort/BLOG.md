@@ -4,6 +4,8 @@ This is a divide and conquer algorithm, meaning that the array will be divided u
 
 ## Un-Stable Algorithm
 
+Quicksort is not an algorithm that is stable. 
+
 ## Learning Objectives
 
 ## Diagram
@@ -53,6 +55,15 @@ ALGORITHM Swap(arr, i, low)
 ```
 
 ## Efficiency
+
+### Time
+
+Worst: O(n^2)
+Expected: O(n Log n)
+
+### Space
+
+O(n Log n)
 
 ## Other References
 
