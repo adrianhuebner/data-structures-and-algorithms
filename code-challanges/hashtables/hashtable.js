@@ -1,3 +1,5 @@
+'use strict';
+
 class HashTable{
   constructor(size){
     this.data = new Array(size);
@@ -32,6 +34,21 @@ class HashTable{
       return undefined;
     }
   } // 0(1) if no collisions, 0(n)
+
+  _contains(key){
+    let address = this._hash(key);
+    const currentBucket = this.data[address];
+    if(currentBucket.length){
+      for(let i = 0; i < currentBucket.length; i++){
+        if(currentBucket[i][0] === key){
+          return true;
+        }
+        else {
+          return false
+        }
+      }
+    }
+  }
 }
 
 const myHashTable = new HashTable(100);
