@@ -8,10 +8,10 @@ function binarySearch(arr,key){
     const midSpot = (arr.length - 1)/2;
   } if (key === midSpot){
     return midSpot;
-  } else if(key < arr[midPoint]){
-    starter = midPoint + 1;
-  } else if(key > arr[midPoint]){
-    endPoint = midPoint - 1;
+  } else if(key < arr[midSpot]){
+    starter = midSpot + 1;
+  } else if(key > arr[midSpot]){
+    endPoint = midSpot - 1;
   } else if(key !== midSpot){
     return -1;
   }
